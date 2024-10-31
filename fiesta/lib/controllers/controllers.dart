@@ -1,0 +1,1 @@
+export 'package:fiesta/controllers/animation_widget_controller.dart';
