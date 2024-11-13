@@ -1,4 +1,4 @@
-import 'package:fiesta/widgets/background_widget.dart/start_page_background_widget.dart';
+import 'package:fiesta/widgets/bezier_clipper_widget/bezzier_clipper_widget.dart';
 import 'package:fiesta/widgets/text_widget.dart/heading_text_animation_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -19,11 +19,13 @@ class StartPage extends StatelessWidget {
             width: double.infinity,
             child: Column(
               children: [
-                  CustomPaint(
-                     painter: StarPageBackgroundWidget(),
-                     child: Container(
-                        height: size.height - (size.height * 0.20),
-                     )
+                  ClipPath(
+                    clipper: BezzierClipperWidget(),
+                    child: Container(
+                      height: size.height * 0.6,
+                      width: double.infinity,
+                      color: Colors.blue,
+                    ),
                   )
 
                 /* HeadingTextAnimationWidget(
