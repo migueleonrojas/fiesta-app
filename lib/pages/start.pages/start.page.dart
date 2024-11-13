@@ -12,38 +12,54 @@ class StartPage extends StatelessWidget {
 
     return  Scaffold(
       body: Expanded(
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: size.height * 0.10),
-          child: SizedBox(
-            
-            width: double.infinity,
-            child: Column(
-              children: [
-                  ClipPath(
-                    clipper: BezzierClipperWidget(),
-                    child: Container(
-                      height: size.height * 0.6,
-                      width: double.infinity,
-                      color: Colors.blue,
-                    ),
-                  )
-
-                /* HeadingTextAnimationWidget(
-                  text: Text(
-                    'Fiesta',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                       fontFamily: 'AkinaRegular',
-                       fontSize: 48
-                    ),
-                  ), 
-                  pixels: 40.0, 
-                  seconds: 1
+        child: SizedBox(
+          width: double.infinity,
+          child: Stack(
+            children: [
+              ClipPath(
+                clipper: BezzierClipperWidget(),
+                child: Container(
+                  height: size.height,
+                  width: double.infinity,
+                  decoration: const BoxDecoration(
+                    gradient: SweepGradient(
+                      colors: [
+                        Colors.blue,
+                        Colors.red,
+                        Colors.blue,
+                        Colors.red,
+                      ]
+                    )
+                  ),
                 ),
-                Text('Tú App para buscar el mejor plan') */
-                
-              ],
-            ),
+              ),
+              const Positioned(
+                left: 0,
+                right: 0,
+                child: Column(
+                  children: [
+                    HeadingTextAnimationWidget(
+                      text: Text(
+                        'Fiesta',
+                        style: TextStyle(
+                          fontFamily: 'AkinaRegular',
+                          fontSize: 48,
+                          color: Colors.white
+                        ),
+                      ), 
+                      pixels: 40.0, 
+                      seconds: 1
+                    ),
+                    Text(
+                      'Tú App para buscar el mejor plan',
+                      style: TextStyle(
+                        color: Colors.white
+                      ),
+                    ),
+                  ],
+                )
+              ) 
+            ],
           ),
         )
       ),
