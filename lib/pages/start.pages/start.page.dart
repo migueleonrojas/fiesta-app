@@ -71,7 +71,7 @@ class StartPage extends StatelessWidget {
                 top: size.height * 0.35,
                 right: size.width * 0.0225,
                 child: Text(
-                  'Inicio de Sesion',
+                  'Ingresar',
                   style: TextStyle(
                     color: Colors.blue,
                     fontSize: size.height * 0.035
@@ -87,7 +87,7 @@ class StartPage extends StatelessWidget {
                   child: Column(
                     children: [
                       SizedBox(
-                        height: size.height * 0.15,
+                        height: size.height * 0.10,
                         width: size.width * 0.9,
                         child: TextFormField(
                           textAlign: TextAlign.center,
@@ -133,15 +133,16 @@ class StartPage extends StatelessWidget {
                             ),
                            
                             suffixIconConstraints: BoxConstraints(
-                              minHeight: size.height * 0.080, 
-                              maxHeight: size.height * 0.085,
+                              minHeight: 50, 
+                              maxHeight: 50,
                             ),
                             contentPadding: const EdgeInsets.symmetric(vertical: 10),
                           ),
                         ),
                       ),
+                      SizedBox(height: size.height * 0.02),
                       SizedBox(
-                        height: size.height * 0.15,
+                        height: size.height * 0.10,
                         width: size.width * 0.9,
                         child: TextFormField(
                           textAlign: TextAlign.center,
@@ -187,8 +188,8 @@ class StartPage extends StatelessWidget {
                             ),
                            
                             prefixIconConstraints: BoxConstraints(
-                              minHeight: size.height * 0.080, 
-                              maxHeight: size.height * 0.085,
+                              minHeight: 50, 
+                              maxHeight: 50,
                             ),
                             contentPadding: const EdgeInsets.symmetric(vertical: 10),
                           ),
@@ -199,28 +200,78 @@ class StartPage extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: size.height * 0.7,
-                left: 0,
-                right: 0,
-                child: RichText(
-                  textAlign:TextAlign.center,
-                  text: TextSpan(
-                    text: '¿Se te olvido la ',
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.blue
+                top: size.height * 0.65,
+                right: size.width * 0.025,
+                child: GestureDetector(
+                  onTap: () {
+
+                  },
+                  child: RichText(
+                    textAlign:TextAlign.center,
+                    text: const TextSpan(
+                      text: '¿Se te olvido la ',
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.blue
+                      ),
+                      children: <TextSpan>[
+                        TextSpan(text: 'contraseña', style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          decoration: TextDecoration.underline,
+                          decorationThickness: 2.0
+                          
+                        )),
+                        TextSpan(text: '?', style: TextStyle())
+                      ],
                     ),
-                    children: <TextSpan>[
-                      TextSpan(text: 'contraseña', style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        decoration: TextDecoration.underline,
-                        decorationThickness: 2.0
-                        
-                      )),
-                      TextSpan(text: '?', style: TextStyle())
-                    ],
                   ),
                 )
+              ),
+              Positioned(
+                width: size.width * 0.9,
+                height: size.height > size.width ? size.height * 0.08 : size.width * 0.065,
+                left: (size.width * 0.5) - (size.width * 0.45),
+                top: size.height * 0.725,
+                child: Container(
+                  height: size.height * 0.060,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(size.width * 0.10),
+                    gradient: LinearGradient(
+                      colors: [Color(0xFFAD0202), Colors.blue]
+                    )
+                  ),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.transparent
+                    ),
+                    child: Text(
+                      'Ingresar',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: size.width * 0.040
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                top: size.height * 0.825,
+                left: 0,
+                right: 0,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                      iconSize: size.height * 0.075,
+                      icon: Icon(Icons.facebook),
+                      onPressed: () {
+                        
+                      },
+                    )
+                  ],
+                ),
               )
             ],
           ),
